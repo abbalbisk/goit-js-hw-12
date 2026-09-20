@@ -59,6 +59,11 @@ body{
     height: 200px;
 
     border: 1px solid #808080;
+
+}
+
+.item-gallery:last-of-type {
+    margin-bottom: 32px;
 }
 .item-gallery img {
     display: block;
@@ -71,6 +76,7 @@ body{
     display: flex;
 
     justify-content: space-around;
+
 
 }
 
@@ -92,43 +98,55 @@ p {
     color: #2e2f42;
     text-align: center;
 }
+
+
+.load-btn {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 125px;
+    height: 40px;
+    background-color: #4e75ff;
+    border: none;
+
+    display: block;
+    margin: 0 auto;
+
+
+}
+
+.load-btn:hover,
+.load-btn:focus {
+    background-color: #6c8cff;
+}
+
+.hidden {
+    display: none;
+}
 .loader-hidden {
     display: none;
 }
-.is-active  {
-        width: 8px;
-        height: 48px;
-        display: inline-block;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        border-radius: 4px;
-        box-sizing: border-box;
-        animation: animloader 1s linear infinite alternate;
+.is-active {
+    margin: 15px auto;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #6c8cff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: block;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
-    @keyframes animloader {
-        0% {
-            box-shadow: 20px 0 rgba(255, 255, 255, 0), 40px 0 rgba(255, 255, 255, 0), 60px 0 rgba(255, 255, 255, 0), 80px 0 rgba(255, 255, 255, 0), 100px 0 rgba(255, 255, 255, 0);
-        }
-
-        20% {
-            box-shadow: 20px 0 rgb(114, 107, 107), 40px 0 rgba(115, 108, 107, 0), 60px 0 rgba(132, 123, 123, 0), 80px 0 rgba(255, 255, 255, 0), 100px 0 rgba(157, 142, 142, 0);
-        }
-
-        40% {
-            box-shadow: 20px 0 rgb(114, 107, 107), 40px 0 rgb(135, 122, 122), 60px 0 rgba(255, 255, 255, 0), 80px 0 rgba(255, 255, 255, 0), 100px 0 rgba(255, 255, 255, 0);
-        }
-
-        60% {
-            box-shadow: 20px 0 rgb(161, 145, 145), 40px 0 rgb(124, 110, 110), 60px 0 white, 80px 0 rgba(255, 255, 255, 0), 100px 0 rgba(255, 255, 255, 0);
-        }
-
-        80% {
-            box-shadow: 20px 0 rgb(114, 107, 107), 40px 0 rgb(104, 96, 96), 60px 0 rgb(128, 116, 116), 80px 0 rgb(125, 114, 114), 100px 0 rgba(255, 255, 255, 0);
-        }
-
-        100% {
-            box-shadow: 20px 0 rgb(114, 107, 107), 40px 0 white, 60px 0 white, 80px 0 white, 100px 0 rgb(148, 138, 138);
-        }
+    100% {
+        transform: rotate(360deg);
     }
+}

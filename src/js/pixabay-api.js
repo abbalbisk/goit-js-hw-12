@@ -8,10 +8,12 @@ axios.defaults.params = {
     image_type: 'photo',
     orientation:'horizontal',
     safesearch: true,
+    per_page: 15,
+    page: '',
 }
 
-export function getImagesByQuery(query) {
-    return axios.get('',
-        { params: { ...axios.defaults.params, q: query } }).then(res => res.data);
-
+export async function getImagesByQuery(query, page) {
+    const res = await axios.get('',
+        { params: { ...axios.defaults.params, q: query, page:page } })
+    return res.data;
 }
